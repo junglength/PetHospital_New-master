@@ -1,0 +1,122 @@
+/* CSS Document */
+/*
+	对于CSS来说  每一个元素默认的margin和padding就是0px。但是不同的浏览器会有一个默认的浏览器样式修改默认的margin padding。所以在使用自定义样式编程前加上  *{ }重新设置margin和padding为0px，覆盖浏览器样式使得各个浏览器下统一。
+*/
+*{
+    margin:0px;
+    padding:0px;
+    font-weight: bold;
+}
+/*a {*/
+    /*color:black;*/
+    /*text-decoration: none;*/
+/*}*/
+
+a:link,
+a:visited     {
+    color:#FF0000;
+    text-decoration:underline;
+}
+a:hover,
+a:active    {
+    color: #5cffeb;
+    text-decoration:none;
+}
+/*
+	ID选择器   以#开始  用来匹配元素的id值
+*/
+#header{
+    height:160px;
+    background-color:#0033FF;
+    position:relative;
+}
+
+/*后代选择器  在多个选择器之间加入空格表示后代选择器 用来匹配元素的包含关系
+	标签选择器  直接使用标签本身来匹配元素
+*/
+
+#header h1{
+    color:#FFFF00;
+    font-size:48px;
+    padding-top:40px;
+    width:300px;/*  通过设置margin的左右为auto可以实现居中，前提是被居中元素指定宽度*/
+    margin:0px auto;
+}
+
+/*   #header  a:first-child   #header 里面所有是一个子元素的链接
+
+	#header > a:first-child  #header的直接子元素中的第一个a
+
+*/
+
+#header > a:first-child{
+    /*float:right;*/
+
+    position:absolute;
+    right:15px;
+    top:10px;
+}
+/*
+	所有元素默认的postion是static，其特点按照在文档中的先后顺序进行排列
+	position:absolute  绝对布局，其特点相对于最近一个已定位(absolute/relative )父元素进行定位,如果没有这样的父元素就相对于body。通过top bottom left right控制
+	position:relative  相对布局  其特点是相对于元素本来的位置进行位移  。通过top bottom left right控制，如果吗，没有位移量，其显示还是在原来的位置，但是性质已经变成定位元素。
+*/
+
+
+
+#header .menu{
+    position:absolute;
+    bottom:5px;
+}
+
+#header .menu li{
+    float: left;
+    margin-left:15px;
+    list-style-type:none
+}
+#main{
+    min-height:500px;
+    background-color:#CCCCCC;
+}
+
+
+
+#main table ,#main h4{
+    width:360px;
+    margin:0px auto;
+}
+
+.minWidth{
+    min-width:240px;
+}
+
+#main table{
+    padding-top:60px;
+}
+#main table .result{
+    background-color: white;
+    text-align: center;
+}
+#main input,#main img[src='CheckCode']{
+    width:150px;
+    height:24px;
+}
+
+#main textarea{
+    width: 150px;
+    height: 96px;
+}
+/*
+	每个id选择器算100 类 伪类算10  标签选择器算1  将所有的值相加就是优先级
+*/
+#main tr:last-child input{
+    width:auto;
+    padding:0 10px;
+}
+
+
+#footer{
+    background-color:#0033FF;
+    height:80px;
+}
+
